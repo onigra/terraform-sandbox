@@ -6,6 +6,11 @@ provider "aws" {
 
 variable "environment" {}
 
+# Use Environment Varialbe
+variable "bastion_allow_ip_list" {
+  type = "list"
+}
+
 variable "app_name" {
   default = "rails-sandbox"
 }
