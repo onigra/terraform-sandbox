@@ -6,6 +6,9 @@ provider "aws" {
 
 variable "environment" {}
 variable "short_env" {}
+variable "bastion_pubkey" {}
+variable "internal_pubkey" {}
+variable "deploy_pubkey" {}
 
 # Use Environment Varialbe
 variable "bastion_allow_ip_list" {
