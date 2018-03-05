@@ -16,6 +16,8 @@ resource "aws_instance" "bastion" {
   security_groups             = ["${aws_security_group.bastion.id}"]
 
   tags {
-    Name = "bastion"
+    Name        = "${var.short_env}-${var.app_name}-bastion"
+    Environment = "${var.environment}"
+    App         = "${var.app_name}"
   }
 }

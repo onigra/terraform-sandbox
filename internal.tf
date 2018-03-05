@@ -6,6 +6,8 @@ resource "aws_instance" "internal" {
   security_groups = ["${aws_security_group.internal.id}"]
 
   tags {
-    Name = "internal"
+    Name        = "${var.short_env}-${var.app_name}-internal"
+    Environment = "${var.environment}"
+    App         = "${var.app_name}"
   }
 }

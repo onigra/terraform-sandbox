@@ -5,6 +5,7 @@ provider "aws" {
 }
 
 variable "environment" {}
+variable "short_env" {}
 
 # Use Environment Varialbe
 variable "bastion_allow_ip_list" {

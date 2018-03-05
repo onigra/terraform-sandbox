@@ -3,14 +3,15 @@ resource "aws_route_table" "private" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = "${aws_nat_gateway.gw.id}"
+    gateway_id = "${aws_nat_gateway.1d.id}"
   }
 
   tags {
-    App         = "${var.app_name}"
+    Name        = "${var.short_env}-${var.app_name}-private"
     Environment = "${var.environment}"
-    Name        = "${var.environment}-${var.app_name}-private"
+    App         = "${var.app_name}"
     Access      = "private"
+    Default     = "false"
   }
 }
 
@@ -28,9 +29,9 @@ resource "aws_default_route_table" "public" {
   }
 
   tags {
-    App         = "${var.app_name}"
+    Name        = "${var.short_env}-${var.app_name}-public"
     Environment = "${var.environment}"
-    Name        = "${var.environment}-${var.app_name}-public"
+    App         = "${var.app_name}"
     Access      = "public"
     Default     = "true"
   }
