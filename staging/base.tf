@@ -4,11 +4,17 @@ provider "aws" {
   profile                 = "terraform-${var.environment}"
 }
 
-variable "environment" {}
-variable "short_env" {}
 variable "bastion_pubkey" {}
 variable "internal_pubkey" {}
 variable "deploy_pubkey" {}
+
+variable "environment" {
+  default = "staging"
+}
+
+variable "short_env" {
+  default = "stg"
+}
 
 # Use Environment Varialbe
 variable "bastion_allow_ip_list" {
