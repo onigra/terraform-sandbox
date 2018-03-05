@@ -10,6 +10,13 @@ resource "aws_security_group" "bastion" {
     cidr_blocks = "${var.bastion_allow_ip_list}"
   }
 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   tags {
     Name        = "${var.short_env}-${var.app_name}-bastion"
     Environment = "${var.environment}"
@@ -27,6 +34,13 @@ resource "aws_security_group" "internal" {
     to_port         = 22
     protocol        = "tcp"
     security_groups = ["${aws_security_group.bastion.id}"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags {
