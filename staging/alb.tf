@@ -1,8 +1,10 @@
 resource "aws_lb" "web" {
-  name                       = "${var.short_env}-${var.app_name}-alb"
-  load_balancer_type         = "application"
-  internal                   = false
-  enable_deletion_protection = true
+  name               = "${var.short_env}-${var.app_name}-alb"
+  load_balancer_type = "application"
+  internal           = false
+
+  # これがtrueだとdestroyでまとめて消せなくて厄介なのでfalseにしておく
+  enable_deletion_protection = false
 
   security_groups = ["${aws_security_group.alb.id}"]
   subnets         = ["${aws_subnet.public_1d.id}", "${aws_subnet.public_1c.id}"]
