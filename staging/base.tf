@@ -6,7 +6,6 @@ provider "aws" {
 
 variable "bastion_pubkey" {}
 variable "internal_pubkey" {}
-variable "deploy_pubkey" {}
 
 variable "environment" {
   default = "staging"
