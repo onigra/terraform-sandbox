@@ -31,17 +31,10 @@ resource "aws_security_group" "alb" {
   }
 }
 
-resource "aws_security_group" "internal" {
-  name        = "internal"
-  description = "internal"
+resource "aws_security_group" "app" {
+  name        = "app"
+  description = "app"
   vpc_id      = "${aws_vpc.vpc.id}"
-
-  ingress {
-    from_port       = 22
-    to_port         = 22
-    protocol        = "tcp"
-    security_groups = ["${aws_security_group.bastion.id}"]
-  }
 
   ingress {
     from_port       = 80
@@ -58,7 +51,7 @@ resource "aws_security_group" "internal" {
   }
 
   tags {
-    Name        = "${var.short_env}-${var.app_name}-internal"
+    Name        = "${var.short_env}-${var.app_name}-app"
     Environment = "${var.environment}"
     App         = "${var.app_name}"
   }
