@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "terraform-sandbox-tfstate"
+    key    = "staging/terraform.tfstate"
+    region = "ap-northeast-1"
+  }
+}
+
 provider "aws" {
   shared_credentials_file = "~/.aws/credentials"
   region                  = "ap-northeast-1"
