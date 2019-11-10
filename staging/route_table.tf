@@ -10,7 +10,6 @@ resource "aws_route_table" "private" {
     Name        = "${var.short_env}-${var.app_name}-private"
     Environment = "${var.environment}"
     App         = "${var.app_name}"
-    Access      = "private"
     Default     = "false"
   }
 }
@@ -37,7 +36,6 @@ resource "aws_default_route_table" "public" {
     Name        = "${var.short_env}-${var.app_name}-public"
     Environment = "${var.environment}"
     App         = "${var.app_name}"
-    Access      = "public"
     Default     = "true"
   }
 }

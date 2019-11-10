@@ -13,7 +13,6 @@ resource "aws_lb" "web" {
     Name        = "${var.short_env}-${var.app_name}-alb"
     Environment = "${var.environment}"
     App         = "${var.app_name}"
-    Access      = "public"
   }
 }
 

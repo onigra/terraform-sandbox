@@ -18,7 +18,6 @@ resource "aws_subnet" "public_1d" {
     Name        = "${var.short_env}-${var.app_name}-public-1d"
     Environment = "${var.environment}"
     App         = "${var.app_name}"
-    Access      = "public"
   }
 }
 
@@ -31,7 +30,6 @@ resource "aws_subnet" "private_1d" {
     Name        = "${var.short_env}-${var.app_name}-private-1d"
     Environment = "${var.environment}"
     App         = "${var.app_name}"
-    Access      = "private"
   }
 }
 
@@ -44,7 +42,6 @@ resource "aws_subnet" "public_1c" {
     Name        = "${var.short_env}-${var.app_name}-public-1c"
     Environment = "${var.environment}"
     App         = "${var.app_name}"
-    Access      = "public"
   }
 }
 
@@ -57,6 +54,5 @@ resource "aws_subnet" "private_1c" {
     Name        = "${var.short_env}-${var.app_name}-private-1c"
     Environment = "${var.environment}"
     App         = "${var.app_name}"
-    Access      = "private"
   }
 }
