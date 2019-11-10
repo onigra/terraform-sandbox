@@ -21,3 +21,8 @@ variable "env" {
 variable "app_name" {
   default = "test"
 }
+
+# Use Environment Varialbe
+variable "allow_ip_list" {
+  type = "list"
+}
