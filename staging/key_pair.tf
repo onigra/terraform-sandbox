@@ -1,4 +1,0 @@
-resource "aws_key_pair" "app" {
-  key_name   = "${var.short_env}-${var.app_name}-app"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8dSXgu8ID1ITZRh1cExbqjQiDptr7LhmW3tAA9rT2odPCc2DczGKZJ2kzVdKSJGc+dmRuiYrVXOjuu7bSbqKXuOFnF+nJWFaC3eSThpcudlGgGBjzP53QV56klf4u3D5OL71ZhaVfJuQuctaSJzriq0zrC505vEStl9suz4MW5Dmuuhj45V39aeEKz51JPPFsAJI79BG1ZIcnJZ33jSEJVkUVh1SYElNNiG9HQ60dNPdxKIwHyLNJEDxDJDaxVkpSHWc9b1g1EOtHI0G2hE8uEsaWBJjw3JVqqdsmRdsvm2J+JGV0MVFKVSQkIcFz1slAYKKyjaajVxbu0A+FtpZx"
-}

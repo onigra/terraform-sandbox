@@ -2,7 +2,6 @@ resource "aws_instance" "app" {
   ami             = "${data.aws_ami.ubuntu.id}"
   instance_type   = "t2.medium"
   subnet_id       = "${aws_subnet.private_1d.id}"
-  key_name        = "${aws_key_pair.app.key_name}"
   security_groups = ["${aws_security_group.app.id}"]
 
   tags {
