@@ -1,4 +1,4 @@
-resource "aws_lb" "web" {
+resource "aws_lb" "app" {
   name               = "${var.short_env}-${var.app_name}-alb"
   load_balancer_type = "application"
   internal           = false
@@ -16,22 +16,26 @@ resource "aws_lb" "web" {
   }
 }
 
-resource "aws_lb_target_group_attachment" "web" {
-  target_group_arn = "${aws_lb_target_group.web.arn}"
-  target_id        = "${aws_instance.internal.id}"
-  port             = 80
-}
-
-resource "aws_lb_listener" "web" {
-  load_balancer_arn = "${aws_lb.web.arn}"
-  port              = "80"
-  protocol          = "HTTP"
-
-  # ssl_policy        = ""
-  # certificate_arn   = ""
-
-  default_action {
-    target_group_arn = "${aws_lb_target_group.web.arn}"
-    type             = "forward"
-  }
-}
+# resource "aws_lb_listener" "http" {
+#   load_balancer_arn = "${aws_lb.app.arn}"
+#   port              = "80"
+#   protocol          = "HTTP"
+#
+#   default_action {
+#     target_group_arn = "${aws_lb_target_group.app.arn}"
+#     type             = "forward"
+#   }
+# }
+#
+# resource "aws_lb_listener" "https" {
+#   load_balancer_arn = "${aws_lb.app.arn}"
+#   port              = "443"
+#   protocol          = "HTTPS"
+#   ssl_policy        = "ELBSecurityPolicy-2016-08"
+#   certificate_arn   = "${aws_acm_certificate.app.arn}"
+#
+#   default_action {
+#     target_group_arn = "${aws_lb_target_group.app.arn}"
+#     type             = "forward"
+#   }
+# }
