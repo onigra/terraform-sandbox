@@ -12,9 +12,6 @@ provider "aws" {
   profile                 = "terraform-${var.environment}"
 }
 
-variable "bastion_pubkey" {}
-variable "internal_pubkey" {}
-
 variable "environment" {
   default = "staging"
 }
