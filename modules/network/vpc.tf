@@ -16,3 +16,7 @@ resource "aws_internet_gateway" "igw" {
     env  = "${var.env}"
   }
 }
+
+output "aws_vpc_id" {
+  value = "${aws_vpc.vpc.id}"
+}
