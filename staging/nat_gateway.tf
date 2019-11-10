@@ -1,4 +1,4 @@
-resource "aws_nat_gateway" "1d" {
+resource "aws_nat_gateway" "nat_1d" {
   allocation_id = "${aws_eip.nat_gateway_1d.id}"
   subnet_id     = "${aws_subnet.public_1d.id}"
 

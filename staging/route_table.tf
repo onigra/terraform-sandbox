@@ -3,7 +3,7 @@ resource "aws_route_table" "private" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = "${aws_nat_gateway.1d.id}"
+    gateway_id = "${aws_nat_gateway.nat_1d.id}"
   }
 
   tags {
