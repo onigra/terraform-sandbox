@@ -1,6 +1,17 @@
+variable "cidr_blocks" {
+  type = "map"
+
+  default = {
+    private_1c = "10.1.0.0/26"
+    private_1d = "10.1.0.64/26"
+    public_1c  = "10.1.1.0/26"
+    public_1d  = "10.1.1.64/26"
+  }
+}
+
 resource "aws_subnet" "public_1d" {
   vpc_id            = "${aws_vpc.vpc.id}"
-  cidr_block        = "10.0.0.0/24"
+  cidr_block        = "${lookup(var.cidr_blocks, "public_1d")}"
   availability_zone = "ap-northeast-1d"
 
   tags {
@@ -13,7 +24,7 @@ resource "aws_subnet" "public_1d" {
 
 resource "aws_subnet" "private_1d" {
   vpc_id            = "${aws_vpc.vpc.id}"
-  cidr_block        = "10.0.1.0/24"
+  cidr_block        = "${lookup(var.cidr_blocks, "private_1d")}"
   availability_zone = "ap-northeast-1d"
 
   tags {
@@ -26,7 +37,7 @@ resource "aws_subnet" "private_1d" {
 
 resource "aws_subnet" "public_1c" {
   vpc_id            = "${aws_vpc.vpc.id}"
-  cidr_block        = "10.0.2.0/24"
+  cidr_block        = "${lookup(var.cidr_blocks, "public_1c")}"
   availability_zone = "ap-northeast-1c"
 
   tags {
@@ -39,7 +50,7 @@ resource "aws_subnet" "public_1c" {
 
 resource "aws_subnet" "private_1c" {
   vpc_id            = "${aws_vpc.vpc.id}"
-  cidr_block        = "10.0.3.0/24"
+  cidr_block        = "${lookup(var.cidr_blocks, "private_1c")}"
   availability_zone = "ap-northeast-1c"
 
   tags {
