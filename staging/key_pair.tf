@@ -1,8 +1,3 @@
-resource "aws_key_pair" "bastion" {
-  key_name   = "${var.short_env}-${var.app_name}-bastion"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDj5CgbogkrpY/Oedho7wtGZ6CJB8Ra/CRA3QPPw8St7CXJaltC/nAgB1PtZz6X+etT8fgE5JCjqEGTUvaNZuzSnU3sf7cJ4NXUbNXsLUwb3nKwuHq+9t5R0rvfdxjFXblBAKb4rob8zVoNYAhCnRVO3fV3das0a6DWHH+bOjPWiHfZKbix9tVxo0L7C7++Y07yyDQR3fS3UU71JMIqDx55Rythx/H61SUHMOOibr14ERXHdNtWgzZzTzYm0i3dP3tYkFPW2t/u5B8hqlfshOpxZ9h0KVIWReRcHkhAIjtTKglv/do7n77xqftro8RLL7vZSJd5bNiuxSwIbVlnZCch"
-}
-
 resource "aws_key_pair" "internal" {
   key_name   = "${var.short_env}-${var.app_name}-internal"
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8dSXgu8ID1ITZRh1cExbqjQiDptr7LhmW3tAA9rT2odPCc2DczGKZJ2kzVdKSJGc+dmRuiYrVXOjuu7bSbqKXuOFnF+nJWFaC3eSThpcudlGgGBjzP53QV56klf4u3D5OL71ZhaVfJuQuctaSJzriq0zrC505vEStl9suz4MW5Dmuuhj45V39aeEKz51JPPFsAJI79BG1ZIcnJZ33jSEJVkUVh1SYElNNiG9HQ60dNPdxKIwHyLNJEDxDJDaxVkpSHWc9b1g1EOtHI0G2hE8uEsaWBJjw3JVqqdsmRdsvm2J+JGV0MVFKVSQkIcFz1slAYKKyjaajVxbu0A+FtpZx"
