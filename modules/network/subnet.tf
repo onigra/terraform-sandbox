@@ -41,3 +41,20 @@ resource "aws_subnet" "private_1c" {
     env  = "${var.env}"
   }
 }
+
+output "public_1d" {
+  value = "${aws_subnet.public_1d.id}"
+}
+
+output "private_1d" {
+  value = "${aws_subnet.private_1d.id}"
+}
+
+output "public_1c" {
+  value = "${aws_subnet.public_1c.id}"
+}
+
+
+output "private_1c" {
+  value = "${aws_subnet.private_1c.id}"
+}
