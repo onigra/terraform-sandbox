@@ -42,3 +42,8 @@ resource "aws_autoscaling_group" "app" {
     ignore_changes = ["desired_capacity", "max_size", "min_size"]
   }
 }
+
+resource "aws_autoscaling_attachment" "app_to_target_group" {
+  autoscaling_group_name = "${aws_autoscaling_group.app.id}"
+  alb_target_group_arn   = "${aws_lb_target_group.app.arn}"
+}
